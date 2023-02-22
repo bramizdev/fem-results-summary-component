@@ -14,9 +14,6 @@ This my a solution to the [Results summary component challenge on Frontend Mento
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -29,20 +26,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+- Desktop 
+![Captura de pantalla 2023-02-22 a las 09 28 35](https://user-images.githubusercontent.com/112894363/220670559-8d428608-3458-41f1-940b-2f2653d62158.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+- Mobile
+![Captura de pantalla 2023-02-22 a las 09 28 49](https://user-images.githubusercontent.com/112894363/220670663-a359073f-5636-44c2-840a-55c79ec52437.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/bramizdev/fem-results-summary-component](https://github.com/bramizdev/fem-results-summary-component)
+- Live Site URL: [https://bramizdev.github.io/fem-results-summary-component/](https://bramizdev.github.io/fem-results-summary-component/)
 
 ## My process
 
@@ -53,61 +46,68 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+The challenge for me with this project were the corner borders. I didn't now how to address this problem so I decided to do it with some pseudo elements I added a ```border``` to the parent container, then I created two pseudo elements ```::before``` and ```::after```, for the background I use transparent and I added a ```border: 3px solid white``` and position absolute to cover the parent border.
 
 To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+  <li class="card__summary-category" data-cat="reaction">
+    <p>Reaction</p>
+    <p class="card__summary-note">
+      80 
+      <span class="card__summary-max-note">/ 100</span>
+    </p>
+  </li>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.card__summary-category[data-cat='reaction'] {
+  color: var(--clr-reaction-500);
+  background-color: var(--clr-reaction-500-t);
+  border: 1px solid var(--clr-reaction-500-t-br);
+  position: relative;
 }
+
+.card__summary-category[data-cat='reaction']::before {
+  content: '';
+  display: block;
+  background-color: transparent;
+  border-top: 3px solid var(--clr-neutral-100);
+  border-bottom: 3px solid var(--clr-neutral-100);
+  position: absolute;
+  top: var(--corner-br-width);
+  bottom: var(--corner-br-width);
+  left: var(--corner-br-height);
+  right: var(--corner-br-height);
+}
+
+.card__summary-category[data-cat='reaction']::after {
+  content: '';
+  display: block;
+  background-color: transparent;
+  border-left: 3px solid var(--clr-neutral-100);
+  border-right: 3px solid var(--clr-neutral-100);
+  position: absolute;
+  top: var(--corner-br-height);
+  bottom: var(--corner-br-height);
+  left: var(--corner-br-width);
+  right: var(--corner-br-width);
+}
+
 ```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I took the idea from this article: [https://codepen.io/ThiemelJiri/post/3-css-border-in-corners-techniques](https://codepen.io/ThiemelJiri/post/3-css-border-in-corners-techniques). I would like to learn more of the other ways to do the corner borders.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [https://codepen.io/ThiemelJiri/post/3-css-border-in-corners-techniques](https://codepen.io/ThiemelJiri/post/3-css-border-in-corners-techniques) - This helped me for the corner borders reason. I took the pseudo elements path.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [@bramizdev](https://github.com/bramizdev)
+- Frontend Mentor - [@bramizdev](https://www.frontendmentor.io/profile/bramizdev)
