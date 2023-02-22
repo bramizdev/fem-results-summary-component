@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Author and description -->
+    <meta name="author" content="Brayan Miza" />
+    <meta
+      name="description"
+      content="This is a solution to the Results summary component challenge on Frontend Mentor."
+    />
+    <!-- Font icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- Title -->
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">Results summary component</h1>
+      <article class="card">
+        <h2 class="visually-hidden">Results</h2>
+        <section class="card__result">
+          <h3 class="card__result-title">Your Result</h3>
+          <div class="card__result-circle">
+            <p class="card__result-note">76</p>
+            <span class="card__result-max-note">of 100</span>
+          </div>
+          <div class="card__result-description">
+            <p class="card__result-classification">Great</p>
+            <p>
+              You scored higher than 65% of the people who have taken these
+              tests.
+            </p>
+          </div>
+        </section>
+        <section class="card__summary">
+          <h3 class="card__summary-title">Summary</h3>
+          <ul class="card__summary-categories">
+            <li class="card__summary-category" data-cat="reaction">
+              <p>Reaction</p>
+              <p class="card__summary-note">
+                80 <span class="card__summary-max-note">/ 100</span>
+              </p>
+            </li>
+            <li class="card__summary-category" data-cat="memory">
+              <p>Memory</p>
+              <p class="card__summary-note">
+                92 <span class="card__summary-max-note">/ 100</span>
+              </p>
+            </li>
+            <li class="card__summary-category" data-cat="verbal">
+              <p>Verbal</p>
+              <p class="card__summary-note">
+                61 <span class="card__summary-max-note">/ 100</span>
+              </p>
+            </li>
+            <li class="card__summary-category" data-cat="visual">
+              <p>Visual</p>
+              <p class="card__summary-note">
+                72 <span class="card__summary-max-note">/ 100</span>
+              </p>
+            </li>
+          </ul>
+          <button class="btn">Continue</button>
+        </section>
+      </article>
+    </main>
+    <footer class="footer">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/bramizdev/" target="_blank">@bramizdev</a>.
+    </footer>
+  </body>
+</html>
